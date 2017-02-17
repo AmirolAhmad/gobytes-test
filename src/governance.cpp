@@ -19,7 +19,7 @@ CGovernanceManager governance;
 
 int nSubmittedFinalBudget;
 
-const std::string CGovernanceManager::SERIALIZATION_VERSION_STRING = "CGovernanceManager-Version-11";
+const std::string CGovernanceManager::SERIALIZATION_VERSION_STRING = "CGovernanceManager-Version-9";
 
 CGovernanceManager::CGovernanceManager()
     : pCurrentBlockIndex(NULL),
@@ -337,27 +337,16 @@ bool CGovernanceManager::AddGovernanceObject(CGovernanceObject& govobj, bool& fA
         return false;
     }
 
-    LogPrint("gobject", "CGovernanceManager::AddGovernanceObject -- Adding object: hash = %s, type = %d\n", nHash.ToString(), govobj.GetObjectType()); 
+    LogPrint("gobject", "CGovernanceManager::AddGovernanceObject -- Adding object: hash = %s, type = %d\n", nHash.ToString(), govobj.GetObjectType());
 
-    if(govobj.nObjectType == GOVERNANCE_OBJECT_WATCHDOG) {
-        // If it's a watchdog, make sure it fits required time bounds
-        if((govobj.GetCreationTime() < GetAdjustedTime() - GOVERNANCE_WATCHDOG_EXPIRATION_TIME ||
-            govobj.GetCreationTime() > GetAdjustedTime() + GOVERNANCE_WATCHDOG_EXPIRATION_TIME)
-            ) {
-            // drop it
-            LogPrint("gobject", "CGovernanceManager::AddGovernanceObject -- CreationTime is out of bounds: hash = %s\n", nHash.ToString());
-            return false;
-        }
-
-        if(!UpdateCurrentWatchdog(govobj)) {
-            // Allow wd's which are not current to be reprocessed
-            fAddToSeen = false;
-            if(pfrom && (nHashWatchdogCurrent != uint256())) {
-                pfrom->PushInventory(CInv(MSG_GOVERNANCE_OBJECT, nHashWatchdogCurrent));
-            }
-            LogPrint("gobject", "CGovernanceManager::AddGovernanceObject -- Watchdog not better than current: hash = %s\n", nHash.ToString());
-            return false;
-        }
+    // If it's a watchdog, make sure it fits required time bounds
+    if(govobj.nObjectType == GOVERNANCE_OBJECT_WATCHDOG &&
+        (govobj.GetCreationTime() < GetAdjustedTime() - GOVERNANCE_WATCHDOG_EXPIRATION_TIME ||
+        govobj.GetCreationTime() > GetAdjustedTime() + GOVERNANCE_WATCHDOG_EXPIRATION_TIME)
+    ) {
+        // drop it
+        LogPrint("gobject", "CGovernanceManager::AddGovernanceObject -- CreationTime is out of bounds: hash = %s\n", nHash.ToString());
+        return false;
     }
 
     // INSERT INTO OUR GOVERNANCE OBJECT MEMORY
@@ -533,7 +522,7 @@ void CGovernanceManager::UpdateCachesAndClean()
                     ++lit;
                 }
             }
-            if(pObj->nObjectType == GOVERNANCE_OBJECT_WATCHDOG) {
+            if(pObj->nObjectType == GOVERNANCE_OBJECT_WATCHDOG && pObj->IsSetCachedDelete()) {
                 mapWatchdogObjects.erase(it->first);
             }
             mapObjects.erase(it++);
@@ -885,7 +874,7 @@ bool CGovernanceManager::MasternodeRateCheck(const CGovernanceObject& govobj, up
                  strHash, vin.prevout.ToStringShort(), nTimestamp, nNow);
         return false;
     }
-    
+
     double dMaxRate = 1.1 / nSuperblockCycleSeconds;
     double dRate = 0.0;
     CRateCheckBuffer buffer;
@@ -1248,7 +1237,7 @@ void CGovernanceManager::AddCachedTriggers()
 
     for(object_m_it it = mapObjects.begin(); it != mapObjects.end(); ++it) {
         CGovernanceObject& govobj = it->second;
-        
+
         if(govobj.nObjectType != GOVERNANCE_OBJECT_TRIGGER) {
             continue;
         }

@@ -1076,6 +1076,10 @@ int CGovernanceManager::RequestGovernanceObjectVotes(const std::vector<CNode*>& 
 
     if(vNodesCopy.empty()) return -1;
 
+    LOCK2(cs_main, cs);
+
+    if(mapObjects.empty()) return -2;
+
     int64_t nNow = GetTime();
     int nTimeout = 60 * 60;
     size_t nPeersPerHashMax = 3;

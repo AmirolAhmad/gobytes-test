@@ -179,19 +179,9 @@ bool CGovernanceObject::ProcessVote(CNode* pfrom,
         governance.AddInvalidVote(vote);
         return false;
     }
-    if(!mnodeman.AddGovernanceVote(vote.GetVinMasternode(), vote.GetParentHash())) {
-        std::ostringstream ostr;
-        ostr << "CGovernanceObject::ProcessVote -- Unable to add governance vote "
-             << ", MN outpoint = " << vote.GetVinMasternode().prevout.ToStringShort()
-             << ", governance object hash = " << GetHash().ToString() << "\n";
-        LogPrint("gobject", ostr.str().c_str());
-        exception = CGovernanceException(ostr.str(), GOVERNANCE_EXCEPTION_PERMANENT_ERROR);
-        return false;
-    }
     voteInstance = vote_instance_t(vote.GetOutcome(), nVoteTimeUpdate, vote.GetTimestamp());
-    if(!fileVotes.HasVote(vote.GetHash())) {
-        fileVotes.AddVote(vote);
-    }
+    fileVotes.AddVote(vote);
+    mnodeman.AddGovernanceVote(vote.GetVinMasternode(), vote.GetParentHash());
     fDirtyCache = true;
     return true;
 }
@@ -463,7 +453,7 @@ bool CGovernanceObject::IsValidLocally(std::string& strError, bool& fMissingMast
 
     // CHECK COLLATERAL IF REQUIRED (HIGH CPU USAGE)
 
-    if(fCheckCollateral) { 
+    if(fCheckCollateral) {
         if((nObjectType == GOVERNANCE_OBJECT_TRIGGER) || (nObjectType == GOVERNANCE_OBJECT_WATCHDOG)) {
             std::string strOutpoint = vinMasternode.prevout.ToStringShort();
             masternode_info_t infoMn = mnodeman.GetMasternodeInfo(vinMasternode);

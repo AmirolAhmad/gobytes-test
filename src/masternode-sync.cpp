@@ -477,7 +477,7 @@ void CMasternodeSync::ProcessTick()
                             // reset nTimeNoObjectsLeft to be able to use the same condition on resync
                             nTimeNoObjectsLeft = 0;
                             SwitchToNextAsset();
-                            ReleaseNodes(vNodesCopy);
+                            ReleaseNodeVector(vNodesCopy);
                             return;
                         }
                         nLastTick = nTick;

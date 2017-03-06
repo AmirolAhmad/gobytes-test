@@ -2505,6 +2505,10 @@ void ThreadCheckDarkSendPool()
                 mnodeman.DoFullVerificationStep();
             }
 
+            if(nTick % (60 * 5) == 0) {
+                governance.DoMaintenance();
+            }
+
             darkSendPool.CheckTimeout();
             darkSendPool.CheckForCompleteQueue();
 

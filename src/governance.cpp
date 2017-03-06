@@ -1327,28 +1327,24 @@ void CGovernanceManager::RequestOrphanObjects()
 {
     std::vector<CNode*> vNodesCopy = CopyNodeVector();
 
-    std::vector<uint256> vecHashesFiltered;
     {
-        std::vector<uint256> vecHashes;
         LOCK(cs);
+        std::vector<uint256> vecHashes;
         mapOrphanVotes.GetKeys(vecHashes);
+
+        LogPrint("gobject", "CGovernanceObject::RequestOrphanObjects -- number objects = %d\n", vecHashes.size());
         for(size_t i = 0; i < vecHashes.size(); ++i) {
             const uint256& nHash = vecHashes[i];
-            if(mapObjects.find(nHash) == mapObjects.end()) {
-                vecHashesFiltered.push_back(nHash);
-            }
-        }
-    }
-
-    LogPrint("gobject", "CGovernanceObject::RequestOrphanObjects -- number objects = %d\n", vecHashesFiltered.size());
-    for(size_t i = 0; i < vecHashesFiltered.size(); ++i) {
-        const uint256& nHash = vecHashesFiltered[i];
-        for(size_t j = 0; j < vNodesCopy.size(); ++j) {
-            CNode* pnode = vNodesCopy[j];
-            if(pnode->fMasternode) {
+            if(mapObjects.find(nHash) != mapObjects.end()) {
                 continue;
             }
-            RequestGovernanceObject(pnode, nHash);
+            for(size_t j = 0; j < vNodesCopy.size(); ++j) {
+                CNode* pnode = vNodesCopy[j];
+                if(pnode->fMasternode) {
+                    continue;
+                }
+                RequestGovernanceObject(pnode, nHash);
+            }
         }
     }
 

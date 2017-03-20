@@ -1379,6 +1379,46 @@ Varoitus: Jos käytät käyttöjärjestelmää (Live os) suoraan usb, dvd tai cd
         <translation>Ota käyttöön PrivateSend &amp;multi-sessio</translation>
     </message>
     <message>
+        <source>Automatically start Dash Core after logging in to the system.</source>
+        <translation>Käynnistä Dash Core automaattisesti kun järjestelmään kirjaudutaan.</translation>
+    </message>
+    <message>
+        <source>&amp;Start Dash Core on system login</source>
+        <translation>&amp;Käynnistä Dash Core järjestelmään kirjauduttaessa</translation>
+    </message>
+    <message>
+        <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
+        <translation>Näytä lisävälilehti jonka ensimmäisellä alivälilehdellä näkyvät sinun masternodet&lt;br/&gt;ja toisella alivälilehdellä näkyvät verkon kaikki masternodet.</translation>
+    </message>
+    <message>
+        <source>Show Masternodes Tab</source>
+        <translation>Näytä Masternodet Välilehti</translation>
+    </message>
+    <message>
+        <source>Show additional information and buttons for PrivateSend on overview screen.</source>
+        <translation>Näytä PrivateSend laajennetut tiedot ja painikkeet yleisnäkymässä.</translation>
+    </message>
+    <message>
+        <source>Enable advanced PrivateSend interface</source>
+        <translation>Ota käyttöön laajennettu PrivateSend käyttöliittymä</translation>
+    </message>
+    <message>
+        <source>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</source>
+        <translation>Näytä varoitus kun PrivateSend osoitteet ovat vähissä.</translation>
+    </message>
+    <message>
+        <source>Warn if PrivateSend is running out of keys</source>
+        <translation>Varoitus jos PrivateSend osoitteet ovat vähissä</translation>
+    </message>
+    <message>
+        <source>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
+        <translation>Käytä kokeellista PrivateSend tilaa jossa on useita sekoitus sessiota per lohko.&lt;br/&gt;Huom: Käytä tätä ominaisuutta varoen.&lt;br/&gt;Varmista että sinulla on viimeisin lompakon (auto)varmistus turvassa!</translation>
+    </message>
+    <message>
+        <source>Enable PrivateSend &amp;multi-session</source>
+        <translation>Ota käyttöön PrivateSend &amp;multi-sessio</translation>
+    </message>
+    <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>Jos poistat vahvistamattomien vaihtorahojen käytön, siirtotapahtuman&lt;br/&gt;vaihtorahaa ei voida käyttää ennen vähintään yhtä vahvistusta.&lt;br/&gt;Tämä vaikuttaa myös kuinka saldosi lasketaan.</translation>
     </message>

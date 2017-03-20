@@ -1314,6 +1314,18 @@
         <translation>啟用進階匿名發送界面</translation>
     </message>
     <message>
+        <source>Automatically start Dash Core after logging in to the system.</source>
+        <translation>在登入系統後自動啓動達世幣核心。</translation>
+    </message>
+    <message>
+        <source>Show Masternodes Tab</source>
+        <translation>顯示主節點標籤頁</translation>
+    </message>
+    <message>
+        <source>Enable advanced PrivateSend interface</source>
+        <translation>啟用進階匿名發送界面</translation>
+    </message>
+    <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>如果你關掉「可以花還沒確認的零錢」，那麼交易中找零的零錢&lt;br/&gt;就必須要等交易至少有一次確認後，才能夠使用。&lt;br/&gt;這也會影響餘額的計算方式。</translation>
     </message>
@@ -3810,8 +3822,8 @@ https://www.transifex.com/projects/p/gobyte/</translation>
         <translation>啓動時檢查的區塊數(預設值: %u, 指定 0 =全部)</translation>
     </message>
     <message>
-        <source>Importing...</source>
-        <translation>正在匯入中...</translation>
+        <source>Generate coins (default: %u)</source>
+        <translation>生產達世幣(預設值: %u)</translation>
     </message>
     <message>
         <source>Include IP addresses in debug output (default: %u)</source>

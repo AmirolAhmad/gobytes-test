@@ -1238,6 +1238,14 @@
         <translation>&amp;Spusť GoByte po prihlásení do systému</translation>
     </message>
     <message>
+        <source>Automatically start Dash Core after logging in to the system.</source>
+        <translation>Automaticky spustiť Dash Core po prihlásení do systému.</translation>
+    </message>
+    <message>
+        <source>&amp;Start Dash Core on system login</source>
+        <translation>&amp;Spusť Dash po prihlásení do systému</translation>
+    </message>
+    <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>Ak vypnete míňanie nepotvrdeného výdavku tak výdavok z transakcie &lt;br&gt;bude možné použiť až keď daná transakcia bude mať aspoň jedno potvrdenie.&lt;br/&gt; Toto má vplyv aj na výpočet vášho zostatku.</translation>
     </message>

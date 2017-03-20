@@ -1378,6 +1378,46 @@
         <translation>Включи PrivateSend &amp;мулти сесия</translation>
     </message>
     <message>
+        <source>Automatically start Dash Core after logging in to the system.</source>
+        <translation>Автоматично стартиране на Dash Core след влизане в системата.</translation>
+    </message>
+    <message>
+        <source>&amp;Start Dash Core on system login</source>
+        <translation>&amp;Стартиране на Dash Core при влизане</translation>
+    </message>
+    <message>
+        <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
+        <translation>Показване на допълнителен раздел показваш всичките Ви masternodes  в първият подраздел&lt;br/&gt;и всички masternodes в мрежата във вторият подраздел.</translation>
+    </message>
+    <message>
+        <source>Show Masternodes Tab</source>
+        <translation>Показване на раздел Masternodes </translation>
+    </message>
+    <message>
+        <source>Show additional information and buttons for PrivateSend on overview screen.</source>
+        <translation>Показване на допълнителна информация и бутон PrivateSend на основния екран.</translation>
+    </message>
+    <message>
+        <source>Enable advanced PrivateSend interface</source>
+        <translation>Включване PrivateSend интерфейс за напреднали</translation>
+    </message>
+    <message>
+        <source>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</source>
+        <translation>Показване на предупреждение когато PrivateSend засече прекалено малък брой оставащи ключове.</translation>
+    </message>
+    <message>
+        <source>Warn if PrivateSend is running out of keys</source>
+        <translation>Предупреди ако PrivateSend е стартиран при недостатъчно ключове</translation>
+    </message>
+    <message>
+        <source>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
+        <translation>Дали да се използва експериментален PrivateSend режим с мулти сесийно миксиране на блок.&lt;br/&gt;Бележка: Трябва да използвате тази функция внимателно.&lt;br/&gt;Убедете се, че винаги имате скоро направен (авто) архив копие на сигурно място!</translation>
+    </message>
+    <message>
+        <source>Enable PrivateSend &amp;multi-session</source>
+        <translation>Включи PrivateSend &amp;мулти сесия</translation>
+    </message>
+    <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>Ако деактивирате харченето на непотвърдено ресто, рестото от транзакция&lt;br/&gt; няма да може да се използва преди да бъде получено поне едно потвърждение. &lt;br/&gt;Това се отразява и на начина на изчисление на баланса ви.</translation>
     </message>
@@ -3894,8 +3934,8 @@ https://www.transifex.com/projects/p/gobyte/</translation>
         <translation>Приема препредадените транзакции получени от белия списък на пиърите,  дори когато не са препредадени транзакциите (по подразбиране: %d)</translation>
     </message>
     <message>
-        <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
-        <translation>Позволява JSON-RPC връзки от определен източник. Важи за &lt;IP&gt; са един единствен IP (например 1.2.3.4), мрежа / мрежова маска (напр. 1.2.3.4/255.255.255.0) или мрежа / CIDR (напр. 1.2.3.4/24). Тази опция може да бъде променяна многократно</translation>
+        <source>Accept relayed transactions received from whitelisted peers even when not relaying transactions (default: %d)</source>
+        <translation>Приема препредадените транзакции получени от белия списък на пиърите,  дори когато не са препредадени транзакциите (по подразбиране: %d)</translation>
     </message>
     <message>
         <source>Bind to given address and whitelist peers connecting to it. Use [host]:port notation for IPv6</source>

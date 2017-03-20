@@ -1378,6 +1378,46 @@
         <translation>Activer le mode &amp;multi-session pour PrivateSend</translation>
     </message>
     <message>
+        <source>Automatically start Dash Core after logging in to the system.</source>
+        <translation>Lancer automatiquement Dash Core après connexion à cet ordinateur.</translation>
+    </message>
+    <message>
+        <source>&amp;Start Dash Core on system login</source>
+        <translation>&amp;Lancer Dash Core au démarrage</translation>
+    </message>
+    <message>
+        <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
+        <translation>Ajouter un onglet montrant tous vos masternodes dans le premier sous-onglet&lt;br/&gt;et tous les masternodes du réseau dans le second.</translation>
+    </message>
+    <message>
+        <source>Show Masternodes Tab</source>
+        <translation>Afficher l'onglet Masternodes</translation>
+    </message>
+    <message>
+        <source>Show additional information and buttons for PrivateSend on overview screen.</source>
+        <translation>Afficher des infos et des boutons supplémentaires pour PrivateSend sur l'écran principal.</translation>
+    </message>
+    <message>
+        <source>Enable advanced PrivateSend interface</source>
+        <translation>Activer l'interface avancée PrivateSend</translation>
+    </message>
+    <message>
+        <source>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</source>
+        <translation>Afficher un message d'avertissement quand PrivateSend détecte qu'il reste très peu de clés dans votre portefeuille.</translation>
+    </message>
+    <message>
+        <source>Warn if PrivateSend is running out of keys</source>
+        <translation>Avertir si PrivateSend manque bientôt de clés</translation>
+    </message>
+    <message>
+        <source>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
+        <translation>Choisir d'utiliser PrivateSend dans un mode expérimental avec sessions multiples de mélange par bloc.&lt;br/&gt;Note : fonction à utiliser avec prudence.&lt;br/&gt;Assurez-vous toujours d'avoir une sauvegarde (automatique) en lieu sûr !</translation>
+    </message>
+    <message>
+        <source>Enable PrivateSend &amp;multi-session</source>
+        <translation>Activer le mode &amp;multi-session pour PrivateSend</translation>
+    </message>
+    <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>Si vous désactivez la dépense d'argent non confirmé, le montant d'une transaction&lt;br/&gt;ne peut pas être utilisé tant que cette transaction n'a pas reçu au moins une confirmation.&lt;br/&gt;Ceci a aussi un impact sur le calcul de votre solde.</translation>
     </message>

@@ -220,7 +220,8 @@ void CGovernanceManager::ProcessMessage(CNode* pfrom, std::string& strCommand, C
 
         govobj.UpdateSentinelVariables(); //this sets local vars in object
 
-        if(AddGovernanceObject(govobj, pfrom))
+        bool fAddToSeen = true;
+        if(AddGovernanceObject(govobj, fAddToSeen, pfrom))
         {
             LogPrintf("MNGOVERNANCEOBJECT -- %s new\n", strHash);
             govobj.Relay();
@@ -229,8 +230,6 @@ void CGovernanceManager::ProcessMessage(CNode* pfrom, std::string& strCommand, C
         if(fAddToSeen) {
             // UPDATE THAT WE'VE SEEN THIS OBJECT
             mapSeenGovernanceObjects.insert(std::make_pair(nHash, SEEN_OBJECT_IS_VALID));
-            // Update the rate buffer
-            MasternodeRateCheck(govobj, UPDATE_TRUE, true, fRateCheckBypassed);
         }
 
         masternodeSync.AddedGovernanceItem();
@@ -311,7 +310,7 @@ void CGovernanceManager::CheckOrphanVotes(CGovernanceObject& govobj, CGovernance
     fRateChecksEnabled = true;
 }
 
-bool CGovernanceManager::AddGovernanceObject(CGovernanceObject& govobj, CNode* pfrom)
+bool CGovernanceManager::AddGovernanceObject(CGovernanceObject& govobj, bool& fAddToSeen, CNode* pfrom)
 {
     LOCK2(cs_main, cs);
     std::string strError = "";
@@ -349,6 +348,8 @@ bool CGovernanceManager::AddGovernanceObject(CGovernanceObject& govobj, CNode* p
         }
 
         if(!UpdateCurrentWatchdog(govobj)) {
+            // Allow wd's which are not current to be reprocessed
+            fAddToSeen = false;
             if(pfrom && (nHashWatchdogCurrent != uint256())) {
                 pfrom->PushInventory(CInv(MSG_GOVERNANCE_OBJECT, nHashWatchdogCurrent));
             }

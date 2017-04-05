@@ -230,6 +230,8 @@ void CGovernanceManager::ProcessMessage(CNode* pfrom, std::string& strCommand, C
         if(fAddToSeen) {
             // UPDATE THAT WE'VE SEEN THIS OBJECT
             mapSeenGovernanceObjects.insert(std::make_pair(nHash, SEEN_OBJECT_IS_VALID));
+            // Update the rate buffer
+            MasternodeRateCheck(govobj, UPDATE_TRUE, true, fRateCheckBypassed);
         }
 
         masternodeSync.AddedGovernanceItem();

@@ -4,7 +4,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "dsnotificationinterface.h"
-#include "darksend.h"
+#include "privatesend-client.h"
 #include "instantx.h"
 #include "governance.h"
 #include "masternodeman.h"
@@ -22,7 +22,7 @@ CDSNotificationInterface::~CDSNotificationInterface()
 void CDSNotificationInterface::UpdatedBlockTip(const CBlockIndex *pindex)
 {
     mnodeman.UpdatedBlockTip(pindex);
-    darkSendPool.UpdatedBlockTip(pindex);
+    privateSendClient.UpdatedBlockTip(pindex);
     instantsend.UpdatedBlockTip(pindex);
     mnpayments.UpdatedBlockTip(pindex);
     governance.UpdatedBlockTip(pindex);

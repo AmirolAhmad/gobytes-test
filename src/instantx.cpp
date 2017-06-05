@@ -173,7 +173,7 @@ void CInstantSend::Vote(CTxLockCandidate& txLockCandidate)
         int n = mnodeman.GetMasternodeRank(activeMasternode.vin, nLockInputHeight, MIN_INSTANTSEND_PROTO_VERSION);
 
         if(n == -1) {
-            LogPrint("instantsend", "CInstantSend::Vote -- Unknown Masternode %s\n", activeMasternode.vin.prevout.ToStringShort());
+            LogPrint("instantsend", "CInstantSend::Vote -- Can't calculate rank for masternode %s\n", activeMasternode.vin.prevout.ToStringShort());
             ++itOutpointLock;
             continue;
         }
@@ -642,6 +642,7 @@ void CInstantSend::CheckAndRemove()
             ++itMasternodeOrphan;
         }
     }
+    LogPrintf("CInstantSend::CheckAndRemove -- %s\n", ToString());
 }
 
 bool CInstantSend::AlreadyHave(const uint256& hash)
@@ -841,6 +842,12 @@ void CInstantSend::SyncTransaction(const CTransaction& tx, const CBlock* pblock)
     }
 }
 
+std::string CInstantSend::ToString()
+{
+    LOCK(cs_instantsend);
+    return strprintf("Lock Candidates: %llu, Votes %llu", mapTxLockCandidates.size(), mapTxLockVotes.size());
+}
+
 //
 // CTxLockRequest
 //
@@ -991,7 +998,7 @@ bool CTxLockVote::IsValid(CNode* pnode) const
 
     if(n == -1) {
         //can be caused by past versions trying to vote with an invalid protocol
-        LogPrint("instantsend", "CTxLockVote::IsValid -- Outdated masternode %s\n", outpointMasternode.ToStringShort());
+        LogPrint("instantsend", "CTxLockVote::IsValid -- Can't calculate rank for masternode %s\n", outpointMasternode.ToStringShort());
         return false;
     }
     LogPrint("instantsend", "CTxLockVote::IsValid -- Masternode %s, rank=%d\n", outpointMasternode.ToStringShort(), n);

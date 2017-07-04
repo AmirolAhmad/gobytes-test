@@ -354,6 +354,7 @@ static const CRPCCommand vRPCCommands[] =
     { "gobyte",               "mnsync",                 &mnsync,                 true  },
     { "gobyte",               "spork",                  &spork,                  true  },
     { "gobyte",               "getpoolinfo",            &getpoolinfo,            true  },
+    { "gobyte",               "sentinelping",           &sentinelping,           true  },
 #ifdef ENABLE_WALLET
     { "gobyte",               "privatesend",            &privatesend,            false },
 

@@ -1000,7 +1000,7 @@ std::string SafeIntVersionToString(uint32_t nVersion)
     }
     catch(const std::bad_cast&)
     {
-        return "Invalid version";
+        return "invalid_version";
     }
 }
 

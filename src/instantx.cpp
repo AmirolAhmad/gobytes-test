@@ -1068,7 +1068,7 @@ bool CTxLockVote::Sign()
 void CTxLockVote::Relay() const
 {
     CInv inv(MSG_TXLOCK_VOTE, GetHash());
-    RelayInv(inv);
+    g_connman->RelayInv(inv);
 }
 
 bool CTxLockVote::IsExpired(int nHeight) const
@@ -1169,7 +1169,7 @@ bool CTxLockCandidate::IsExpired(int nHeight) const
 
 void CTxLockCandidate::Relay() const
 {
-    RelayTransaction(txLockRequest);
+    g_connman->RelayTransaction(txLockRequest);
     std::map<COutPoint, COutPointLock>::const_iterator itOutpointLock = mapOutPointLocks.begin();
     while(itOutpointLock != mapOutPointLocks.end()) {
         itOutpointLock->second.Relay();

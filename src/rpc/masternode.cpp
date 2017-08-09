@@ -5,7 +5,7 @@
 
 #include "activemasternode.h"
 #include "init.h"
-#include "main.h"
+#include "validation.h"
 #include "masternode-payments.h"
 #include "masternode-sync.h"
 #include "masternodeconfig.h"

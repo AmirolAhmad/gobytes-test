@@ -8,7 +8,7 @@
 
 #include "chain.h"
 #include "chainparams.h"
-#include "main.h"
+#include "validation.h"
 #include "uint256.h"
 
 #include <stdint.h>

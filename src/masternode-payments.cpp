@@ -411,7 +411,7 @@ void CMasternodePayments::ProcessMessage(CNode* pfrom, std::string& strCommand, 
 
         if(AddPaymentVote(vote)){
             vote.Relay();
-            masternodeSync.AddedPaymentVote();
+            masternodeSync.BumpAssetLastTime("MASTERNODEPAYMENTVOTE");
         }
     }
 }

@@ -6,6 +6,7 @@
 #ifndef INSTANTX_H
 #define INSTANTX_H
 
+#include "chain.h"
 #include "net.h"
 #include "primitives/transaction.h"
 
@@ -97,6 +98,8 @@ public:
     bool IsLockedInstantSendTransaction(const uint256& txHash);
     // get the actual uber og accepted lock signatures
     int GetTransactionLockSignatures(const uint256& txHash);
+    // get instantsend confirmations (only)
+    int GetConfirmations(const uint256 &nTXHash);
 
     // remove expired entries from maps
     void CheckAndRemove();

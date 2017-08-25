@@ -117,7 +117,7 @@ class CGovernanceObject
     friend class CGovernanceTriggerManager;
 
 public: // Types
-    typedef std::map<int, vote_rec_t> vote_m_t;
+    typedef std::map<CTxIn, vote_rec_t> vote_m_t;
 
     typedef vote_m_t::iterator vote_m_it;
 
@@ -345,8 +345,6 @@ private:
     bool ProcessVote(CNode* pfrom,
                      const CGovernanceVote& vote,
                      CGovernanceException& exception);
-
-    void RebuildVoteMap();
 
     /// Called when MN's which have voted on this object have been removed
     void ClearMasternodeVotes();

@@ -659,7 +659,7 @@ std::vector<std::pair<int, CMasternode> > CMasternodeMan::GetMasternodeRanks(int
     return vecMasternodeRanks;
 }
 
-CMasternode* CMasternodeMan::GetMasternodeByRank(int nRank, int nBlockHeight, int nMinProtocol, bool fOnlyActive)
+bool CMasternodeMan::GetMasternodeByRank(int nRank, int nBlockHeight, int nMinProtocol, bool fOnlyActive, masternode_info_t& mnInfoRet)
 {
     std::vector<std::pair<int64_t, CMasternode*> > vecMasternodeScores;
 
@@ -668,7 +668,7 @@ CMasternode* CMasternodeMan::GetMasternodeByRank(int nRank, int nBlockHeight, in
     uint256 blockHash;
     if(!GetBlockHash(blockHash, nBlockHeight)) {
         LogPrintf("CMasternode::GetMasternodeByRank -- ERROR: GetBlockHash() failed at nBlockHeight %d\n", nBlockHeight);
-        return NULL;
+        return false;
     }
 
     // Fill scores
@@ -688,11 +688,12 @@ CMasternode* CMasternodeMan::GetMasternodeByRank(int nRank, int nBlockHeight, in
     BOOST_FOREACH (PAIRTYPE(int64_t, CMasternode*)& s, vecMasternodeScores){
         rank++;
         if(rank == nRank) {
-            return s.second;
+            mnInfoRet = *s.second;
+            return true;
         }
     }
 
-    return NULL;
+    return false;
 }
 
 void CMasternodeMan::ProcessMasternodeConnections()

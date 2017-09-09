@@ -96,6 +96,22 @@ int ClientModel::getNumBlocks() const
     return chainActive.Height();
 }
 
+int ClientModel::getHeaderTipHeight() const
+{
+    LOCK(cs_main);
+    if (!pindexBestHeader)
+        return 0;
+    return pindexBestHeader->nHeight;
+}
+
+int64_t ClientModel::getHeaderTipTime() const
+{
+    LOCK(cs_main);
+    if (!pindexBestHeader)
+        return 0;
+    return pindexBestHeader->GetBlockTime();
+}
+
 quint64 ClientModel::getTotalBytesRecv() const
 {
     if(!g_connman)
@@ -230,11 +246,6 @@ QString ClientModel::formatSubVersion() const
     return QString::fromStdString(strSubVersion);
 }
 
-QString ClientModel::formatBuildDate() const
-{
-    return QString::fromStdString(CLIENT_DATE);
-}
-
 bool ClientModel::isReleaseVersion() const
 {
     return CLIENT_VERSION_IS_RELEASE;
@@ -248,6 +259,11 @@ QString ClientModel::clientName() const
 QString ClientModel::formatClientStartupTime() const
 {
     return QDateTime::fromTime_t(nClientStartupTime).toString();
+}
+
+QString ClientModel::dataDir() const
+{
+    return QString::fromStdString(GetDataDir().string());
 }
 
 void ClientModel::updateBanlist()

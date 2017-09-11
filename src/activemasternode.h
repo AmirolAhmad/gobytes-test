@@ -51,7 +51,7 @@ public:
     CKey keyMasternode;
 
     // Initialized while registering Masternode
-    CTxIn vin;
+    COutPoint outpoint;
     CService service;
 
     int nState; // should be one of ACTIVE_MASTERNODE_XXXX
@@ -63,7 +63,7 @@ public:
           fPingerEnabled(false),
           pubKeyMasternode(),
           keyMasternode(),
-          vin(),
+          outpoint(),
           service(),
           nState(ACTIVE_MASTERNODE_INITIAL)
     {}

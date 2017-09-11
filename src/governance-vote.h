@@ -103,7 +103,7 @@ private:
 
 public:
     CGovernanceVote();
-    CGovernanceVote(CTxIn vinMasternodeIn, uint256 nParentHashIn, vote_signal_enum_t eVoteSignalIn, vote_outcome_enum_t eVoteOutcomeIn);
+    CGovernanceVote(COutPoint outpointMasternodeIn, uint256 nParentHashIn, vote_signal_enum_t eVoteSignalIn, vote_outcome_enum_t eVoteOutcomeIn);
 
     bool IsValid() const { return fValid; }
 
@@ -129,9 +129,7 @@ public:
         return CGovernanceVoting::ConvertOutcomeToString(GetOutcome());
     }
 
-    CTxIn& GetVinMasternode() { return vinMasternode; }
-
-    const CTxIn& GetVinMasternode() const { return vinMasternode; }
+    const COutPoint& GetMasternodeOutpoint() const { return vinMasternode.prevout; }
 
     /**
     *   GetHash()

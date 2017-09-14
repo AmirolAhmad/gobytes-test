@@ -156,7 +156,7 @@ public:
     CMasternodePing lastPing{};
     std::vector<unsigned char> vchSig{};
 
-    int nCacheCollateralBlock{};
+    uint256 nCollateralMinConfBlockHash{};
     int nBlockLastPaid{};
     int nPoSeBanScore{};
     int nPoSeBanHeight{};
@@ -188,7 +188,7 @@ public:
         READWRITE(nTimeLastPaid);
         READWRITE(nTimeLastWatchdogVote);
         READWRITE(nActiveState);
-        READWRITE(nCacheCollateralBlock);
+        READWRITE(nCollateralMinConfBlockHash);
         READWRITE(nBlockLastPaid);
         READWRITE(nProtocolVersion);
         READWRITE(nPoSeBanScore);
@@ -285,7 +285,7 @@ public:
         static_cast<masternode_info_t&>(*this)=from;
         lastPing = from.lastPing;
         vchSig = from.vchSig;
-        nCacheCollateralBlock = from.nCacheCollateralBlock;
+        nCollateralMinConfBlockHash = from.nCollateralMinConfBlockHash;
         nBlockLastPaid = from.nBlockLastPaid;
         nPoSeBanScore = from.nPoSeBanScore;
         nPoSeBanHeight = from.nPoSeBanHeight;

@@ -39,7 +39,7 @@ private:
     bool fPingerEnabled;
 
     /// Ping Masternode
-    bool SendMasternodePing();
+    bool SendMasternodePing(CConnman& connman);
 
     //  sentinel ping data
     int64_t nSentinelPingTime;
@@ -69,7 +69,7 @@ public:
     {}
 
     /// Manage state of active Masternode
-    void ManageState();
+    void ManageState(CConnman& connman);
 
     std::string GetStateString() const;
     std::string GetStatus() const;
@@ -78,9 +78,9 @@ public:
     bool UpdateSentinelPing(int version);
 
 private:
-    void ManageStateInitial();
+    void ManageStateInitial(CConnman& connman);
     void ManageStateRemote();
-    void ManageStateLocal();
+    void ManageStateLocal(CConnman& connman);
 };
 
 #endif

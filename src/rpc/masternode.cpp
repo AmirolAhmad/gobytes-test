@@ -243,7 +243,7 @@ UniValue masternode(const UniValue& params, bool fHelp)
 
         if(activeMasternode.nState != ACTIVE_MASTERNODE_STARTED){
             activeMasternode.nState = ACTIVE_MASTERNODE_INITIAL; // TODO: consider better way
-            activeMasternode.ManageState();
+            activeMasternode.ManageState(*g_connman);
         }
 
         return activeMasternode.GetStatus();
@@ -276,12 +276,12 @@ UniValue masternode(const UniValue& params, bool fHelp)
 
                 statusObj.push_back(Pair("result", fResult ? "successful" : "failed"));
                 if(fResult) {
-                    mnodeman.UpdateMasternodeList(mnb);
-                    mnb.Relay();
+                    mnodeman.UpdateMasternodeList(mnb, *g_connman);
+                    mnb.Relay(*g_connman);
                 } else {
                     statusObj.push_back(Pair("errorMessage", strError));
                 }
-                mnodeman.NotifyMasternodeUpdates();
+                mnodeman.NotifyMasternodeUpdates(*g_connman);
                 break;
             }
         }
@@ -330,8 +330,8 @@ UniValue masternode(const UniValue& params, bool fHelp)
 
             if (fResult) {
                 nSuccessful++;
-                mnodeman.UpdateMasternodeList(mnb);
-                mnb.Relay();
+                mnodeman.UpdateMasternodeList(mnb, *g_connman);
+                mnb.Relay(*g_connman);
             } else {
                 nFailed++;
                 statusObj.push_back(Pair("errorMessage", strError));
@@ -339,7 +339,7 @@ UniValue masternode(const UniValue& params, bool fHelp)
 
             resultsObj.push_back(Pair("status", statusObj));
         }
-        mnodeman.NotifyMasternodeUpdates();
+        mnodeman.NotifyMasternodeUpdates(*g_connman);
 
         UniValue returnObj(UniValue::VOBJ);
         returnObj.push_back(Pair("overall", strprintf("Successfully started %d masternodes, failed to start %d, total %d", nSuccessful, nFailed, nSuccessful + nFailed)));
@@ -806,13 +806,13 @@ UniValue masternodebroadcast(const UniValue& params, bool fHelp)
             bool fResult;
             if (mnb.CheckSignature(nDos)) {
                 if (fSafe) {
-                    fResult = mnodeman.CheckMnbAndUpdateMasternodeList(NULL, mnb, nDos);
+                    fResult = mnodeman.CheckMnbAndUpdateMasternodeList(NULL, mnb, nDos, *g_connman);
                 } else {
-                    mnodeman.UpdateMasternodeList(mnb);
-                    mnb.Relay();
+                    mnodeman.UpdateMasternodeList(mnb, *g_connman);
+                    mnb.Relay(*g_connman);
                     fResult = true;
                 }
-                mnodeman.NotifyMasternodeUpdates();
+                mnodeman.NotifyMasternodeUpdates(*g_connman);
             } else fResult = false;
 
             if(fResult) {

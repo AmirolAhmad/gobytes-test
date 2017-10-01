@@ -179,7 +179,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         else retarget = DIFF_BTC;
     // testnet -- we want a lot of coins in existance early on
     } else {
-        if (pindexLast->nHeight + 1 >= 650) retarget = DIFF_DGW;
+        if (pindexLast->nHeight + 1 >= 4000) retarget = DIFF_DGW;
         else retarget = DIFF_BTC;
     }
 

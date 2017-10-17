@@ -126,7 +126,7 @@ UniValue masternode(const UniValue& params, bool fHelp)
                 "  status       - Print masternode status information\n"
                 "  list         - Print list of all known masternodes (see masternodelist for more info)\n"
                 "  list-conf    - Print masternode.conf in JSON format\n"
-                "  winner       - Print info on next masternode winner to vote for (calculated locally)\n"
+                "  winner       - Print info on next masternode winner to vote for\n"
                 "  winners      - Print list of masternode winners\n"
                 );
 
@@ -177,7 +177,7 @@ UniValue masternode(const UniValue& params, bool fHelp)
 
         int nCount;
         masternode_info_t mnInfo;
-        mnodeman.GetNextMasternodeInQueueForPayment(true, true, nCount, mnInfo);
+        mnodeman.GetNextMasternodeInQueueForPayment(true, nCount, mnInfo);
 
         if (strMode == "qualify")
             return nCount;
@@ -200,7 +200,8 @@ UniValue masternode(const UniValue& params, bool fHelp)
         }
         nHeight = pindex->nHeight + (strCommand == "current" ? 1 : 10);
         mnodeman.UpdateLastPaid(pindex);
-        if (!mnodeman.GetNextMasternodeInQueueForPayment(nHeight, true, false, nCount, mnInfo))
+
+        if(!mnodeman.GetNextMasternodeInQueueForPayment(nHeight, true, nCount, mnInfo))
             return "unknown";
 
         UniValue obj(UniValue::VOBJ);

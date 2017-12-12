@@ -316,8 +316,10 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sha512.cpp \
   crypto/sha512.h
 
-# x11
+# neoscrypt
 crypto_libbitcoin_crypto_a_SOURCES += \
+	crypto/neoscrypt.c \
+	crypto/neoscrypt.h \
   crypto/blake.c \
   crypto/bmw.c \
   crypto/cubehash.c \

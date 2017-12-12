@@ -416,8 +416,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Modify configuration options for Dash Core</source>
-        <translation>Modify configuration options for Dash Core</translation>
+        <source>Modify configuration options for GoByte Core</source>
+        <translation>Modify configuration options for GoByte Core</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -651,8 +651,8 @@
     </message>
     <message>
         <location line="+168"/>
-        <source>Dash Core client</source>
-        <translation>Dash Core client</translation>
+        <source>GoByte Core client</source>
+        <translation>GoByte Core client</translation>
     </message>
     <message numerus="yes">
         <location line="+200"/>
@@ -1541,13 +1541,13 @@
     </message>
     <message>
         <location line="+117"/>
-        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Dash network, as detailed below.</source>
-        <translation>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Dash network, as detailed below.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the GoByte network, as detailed below.</source>
+        <translation>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the GoByte network, as detailed below.</translation>
     </message>
     <message>
         <location line="+19"/>
-        <source>Attempting to spend Dash that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Attempting to spend Dash that are affected by not-yet-displayed transactions will not be accepted by the network.</translation>
+        <source>Attempting to spend GoByte that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Attempting to spend GoByte that are affected by not-yet-displayed transactions will not be accepted by the network.</translation>
     </message>
     <message>
         <location line="+63"/>
@@ -2526,12 +2526,12 @@ https://www.transifex.com/projects/p/gobyte/</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../dash.cpp" line="+86"/>
+        <location filename="../gobyte.cpp" line="+86"/>
         <location line="+7"/>
         <location line="+15"/>
         <location line="+19"/>
-        <source>Dash Core</source>
-        <translation>Dash Core</translation>
+        <source>GoByte Core</source>
+        <translation>GoByte Core</translation>
     </message>
     <message>
         <location line="-40"/>
@@ -2555,8 +2555,8 @@ https://www.transifex.com/projects/p/gobyte/</translation>
     </message>
     <message>
         <location line="+48"/>
-        <source>Dash Core didn&apos;t yet exit safely...</source>
-        <translation>Dash Core didn&apos;t yet exit safely...</translation>
+        <source>GoByte Core didn&apos;t yet exit safely...</source>
+        <translation>GoByte Core didn&apos;t yet exit safely...</translation>
     </message>
     <message>
         <location filename="../bitcoinunits.cpp" line="+233"/>

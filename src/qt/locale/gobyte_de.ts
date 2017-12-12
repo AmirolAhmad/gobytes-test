@@ -188,8 +188,8 @@
         <translation>Wallet verschlüsselt</translation>
     </message>
     <message>
-        <source>GoByte Core will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your dashs from being stolen by malware infecting your computer.</source>
-        <translation>GoByte wird jetzt beendet, um den Verschlüsselungsprozess abzuschließen. Bitte beachten Sie, dass die Wallet-Verschlüsselung nicht vollständig vor Diebstahl ihrer Dash durch Schadsoftware schützt, die ihren Computer befallen könnte.</translation>
+        <source>GoByte Core will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your gobytes from being stolen by malware infecting your computer.</source>
+        <translation>GoByte wird jetzt beendet, um den Verschlüsselungsprozess abzuschließen. Bitte beachten Sie, dass die Wallet-Verschlüsselung nicht vollständig vor Diebstahl ihrer GoByte durch Schadsoftware schützt, die ihren Computer befallen könnte.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -326,7 +326,7 @@
         <translation>&amp;Konfiguration...</translation>
     </message>
     <message>
-        <source>Modify configuration options for Dash Core</source>
+        <source>Modify configuration options for GoByte Core</source>
         <translation>Die Konfiguration des Clients bearbeiten</translation>
     </message>
     <message>
@@ -514,12 +514,12 @@
         <translation>Registerkartenleiste</translation>
     </message>
     <message>
-        <source>Dash Core client</source>
-        <translation>Dash Core Client</translation>
+        <source>GoByte Core client</source>
+        <translation>GoByte Core Client</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Dash network</source>
-        <translation><numerusform>%n aktive Verbindung zum Dash-Netzwerk</numerusform><numerusform>%n aktive Verbindungen zum Dash-Netzwerk</numerusform></translation>
+        <source>%n active connection(s) to GoByte network</source>
+        <translation><numerusform>%n aktive Verbindung zum GoByte-Netzwerk</numerusform><numerusform>%n aktive Verbindungen zum GoByte-Netzwerk</numerusform></translation>
     </message>
     <message>
         <source>Network activity disabled</source>
@@ -1220,12 +1220,12 @@ Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es is
         <translation>Formular</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Dash network, as detailed below.</source>
-        <translation>Kontostand möglicherweise falsch, da die neuesten Transaktionen ggf. noch nicht sichtbar sind. Der Kontostand wird automatisch aktualisiert, sobald Ihre Wallet die Synchronisation mit dem Dash Netzwerk abgeschlossen hat.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the GoByte network, as detailed below.</source>
+        <translation>Kontostand möglicherweise falsch, da die neuesten Transaktionen ggf. noch nicht sichtbar sind. Der Kontostand wird automatisch aktualisiert, sobald Ihre Wallet die Synchronisation mit dem GoByte Netzwerk abgeschlossen hat.</translation>
     </message>
     <message>
-        <source>Attempting to spend Dash that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Der Versuch Dash aus Transaktionen auszugeben, die noch nicht angezeigt werden, wird vom Netzwerk nicht akzeptiert.</translation>
+        <source>Attempting to spend GoByte that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Der Versuch GoByte aus Transaktionen auszugeben, die noch nicht angezeigt werden, wird vom Netzwerk nicht akzeptiert.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1366,12 +1366,12 @@ Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es is
         <translation>PrivateSend &amp;multisession aktivieren</translation>
     </message>
     <message>
-        <source>Automatically start Dash Core after logging in to the system.</source>
-        <translation>Dash Core nach der Anmeldung am System automatisch starten.</translation>
+        <source>Automatically start GoByte Core after logging in to the system.</source>
+        <translation>GoByte Core nach der Anmeldung am System automatisch starten.</translation>
     </message>
     <message>
-        <source>&amp;Start Dash Core on system login</source>
-        <translation>&amp;Starte Dash Core während der Systemanmeldung</translation>
+        <source>&amp;Start GoByte Core on system login</source>
+        <translation>&amp;Starte GoByte Core während der Systemanmeldung</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -2011,8 +2011,8 @@ https://www.transifex.com/projects/p/gobyte/</translation>
 <context>
     <name>QObject</name>
     <message>
-        <source>Dash Core</source>
-        <translation>Dash Core</translation>
+        <source>GoByte Core</source>
+        <translation>GoByte Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
@@ -2031,8 +2031,8 @@ https://www.transifex.com/projects/p/gobyte/</translation>
         <translation>Fehler beim Lesen der Masternode Konfigurationsdatei: %1</translation>
     </message>
     <message>
-        <source>Dash Core didn't yet exit safely...</source>
-        <translation>Dash Core wurde noch nicht sicher beendet...</translation>
+        <source>GoByte Core didn't yet exit safely...</source>
+        <translation>GoByte Core wurde noch nicht sicher beendet...</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -2971,7 +2971,7 @@ Dies kann passieren, wenn einige GoByte aus ihrer Wallet bereits ausgegeben wurd
     </message>
     <message>
         <source>Warning: Invalid GoByte address</source>
-        <translation>Warnung: ungültige Dash-Adresse</translation>
+        <translation>Warnung: ungültige GoByte-Adresse</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -4209,7 +4209,7 @@ Dies kann passieren, wenn einige GoByte aus ihrer Wallet bereits ausgegeben wurd
     </message>
     <message>
         <source>Error loading wallet.dat: Wallet requires newer version of GoByte Core</source>
-        <translation>Fehler beim Laden von wallet.dat: Wallet benötigt neuere Version von Dash Core</translation>
+        <translation>Fehler beim Laden von wallet.dat: Wallet benötigt neuere Version von GoByte Core</translation>
     </message>
     <message>
         <source>Failed to load fulfilled requests cache from</source>

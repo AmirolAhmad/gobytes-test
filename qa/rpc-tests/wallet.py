@@ -137,7 +137,7 @@ class WalletTest (BitcoinTestFramework):
         assert_equal(self.nodes[2].getbalance(), node_2_bal)
         node_0_bal = self.check_fee_amount(self.nodes[0].getbalance(), Decimal('200'), fee_per_byte, count_bytes(self.nodes[2].getrawtransaction(txid)))
 
-        # Sendmany 100 DASH
+        # Sendmany 100 GBX
         txid = self.nodes[2].sendmany('from1', {address: 100}, 0, False, "", [])
         self.nodes[2].generate(1)
         self.sync_all()
@@ -145,7 +145,7 @@ class WalletTest (BitcoinTestFramework):
         node_2_bal = self.check_fee_amount(self.nodes[2].getbalance(), node_2_bal - Decimal('100'), fee_per_byte, count_bytes(self.nodes[2].getrawtransaction(txid)))
         assert_equal(self.nodes[0].getbalance(), node_0_bal)
 
-        # Sendmany 100 DASH with subtract fee from amount
+        # Sendmany 100 GBX with subtract fee from amount
         txid = self.nodes[2].sendmany('from1', {address: 100}, 0, False, "", [address])
         self.nodes[2].generate(1)
         self.sync_all()

@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Dash Core developers
+// Copyright (c) 2014-2017 The GoByte Core developers
 // Copyright (c) 2017-2018 The GoByte Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -968,7 +968,7 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
             + HelpRequiringPassphrase() + "\n"
             "\nArguments:\n"
             "1. \"fromaccount\"    (string, required) The name of the account to send funds from. May be the default account using \"\".\n"
-            "2. \"todashaddress\"  (string, required) The gobyte address to send funds to.\n"
+            "2. \"togobyteaddress\"  (string, required) The gobyte address to send funds to.\n"
             "3. amount           (numeric or string, required) The amount in " + CURRENCY_UNIT + " (transaction fee is added on top).\n"
             "4. minconf          (numeric, optional, default=1) Only use funds with at least this many confirmations.\n"
             "5. addlockconf      (bool, optional, default=false) Whether to add " + std::to_string(nInstantSendDepth) + " confirmations to transactions locked via InstantSend.\n"

@@ -11,8 +11,8 @@ The following are some helpful notes on how to run GoByte on your native platfor
 
 Unpack the files into a directory and run:
 
-- `bin/dash-qt` (GUI) or
-- `bin/dashd` (headless)
+- `bin/gobyte-qt` (GUI) or
+- `bin/gobyted` (headless)
 
 ### Windows
 

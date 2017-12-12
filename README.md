@@ -1,7 +1,7 @@
 GoByte Core staging tree 0.12.1
 ===============================
 
-`master:` [![Build Status](https://travis-ci.org/gobytecoin/gobyte.svg?branch=master)](https://travis-ci.org/gobytecoin/gobyte) `v0.12.0.x:` [![Build Status](https://travis-ci.org/gobytecoin/gobyte.svg?branch=v0.12.0.x)](https://travis-ci.org/gobytecoin/gobyte/branches) `v0.12.1.x:` [![Build Status](https://travis-ci.org/gobytecoin/gobyte.svg?branch=v0.12.1.x)](https://travis-ci.org/gobytecoin/gobyte/branches)
+`master:` [![Build Status](https://travis-ci.org/AmirolAhmad/gobytes-test.svg?branch=master)](https://travis-ci.org/AmirolAhmad/gobytes-test) `v0.12.0.x:` [![Build Status](https://travis-ci.org/AmirolAhmad/gobytes-test.svg?branch=v0.12.0.x)](https://travis-ci.org/AmirolAhmad/gobytes-test/branches) `v0.12.1.x:` [![Build Status](https://travis-ci.org/AmirolAhmad/gobytes-test.svg?branch=v0.12.1.x)](https://travis-ci.org/AmirolAhmad/gobytes-test/branches)
 
 https://www.gobyte.network
 
@@ -56,4 +56,3 @@ Changes should be tested by somebody other than the developer who wrote the
 code. This is especially important for large or high-risk changes. It is useful
 to add a test plan to the pull request description if testing the changes is
 not straightforward.
-

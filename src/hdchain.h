@@ -1,3 +1,4 @@
+// Copyright (c) 2014-2017 The Dash Core developers
 // Copyright (c) 2014-2017 The GoByte Core developers
 // Distributed under the MIT software license, see the accompanying
 #ifndef GBX_HDCHAIN_H

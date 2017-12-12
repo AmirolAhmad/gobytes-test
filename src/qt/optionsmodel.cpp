@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The GoByte Core developers
+// Copyright (c) 2014-2017 The Dash Core developers
 // Copyright (c) 2017-2018 The GoByte Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -65,7 +65,7 @@ void OptionsModel::Init(bool resetSettings)
         settings.setValue("fHideTrayIcon", false);
     fHideTrayIcon = settings.value("fHideTrayIcon").toBool();
     Q_EMIT hideTrayIconChanged(fHideTrayIcon);
-    
+
     if (!settings.contains("fMinimizeToTray"))
         settings.setValue("fMinimizeToTray", false);
     fMinimizeToTray = settings.value("fMinimizeToTray").toBool() && !fHideTrayIcon;
@@ -457,13 +457,13 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
                 settings.setValue("digits", value);
                 setRestartRequired(true);
             }
-            break;            
+            break;
         case Theme:
             if (settings.value("theme") != value) {
                 settings.setValue("theme", value);
                 setRestartRequired(true);
             }
-            break;            
+            break;
         case Language:
             if (settings.value("language") != value) {
                 settings.setValue("language", value);
